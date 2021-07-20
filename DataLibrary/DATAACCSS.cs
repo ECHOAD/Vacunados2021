@@ -22,6 +22,19 @@ namespace DataLibrary
 
         }
 
+        public async Task<T> LoadObject<T,U>(string sql, U parameteres, string conectionString)
+        {
+            using (IDbConnection conection = new SqlConnection(conectionString))
+            {
+                T dynamic = await conection.QueryFirstAsync<T>(sql, parameteres);
+                
+                
+                return dynamic;
+                
+            }
+
+        }
+
         public async Task<int> SaveData<T>(string sql, T parameteres, string conectionString)
         {
             

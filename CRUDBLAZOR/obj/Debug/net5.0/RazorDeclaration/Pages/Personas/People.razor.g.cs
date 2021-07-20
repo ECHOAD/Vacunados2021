@@ -119,32 +119,41 @@ using Microsoft.Extensions.Configuration;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 138 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\Pages\Personas\People.razor"
+#line 168 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\Pages\Personas\People.razor"
        
-
-
 
     private Persona_Model OPersona = new();
 
+    private static bool ModoEditar = false;
 
 
-    List<Persona_Model> personas;
+
+    List<dynamic> personas;
     private List<ComboBoxProvinciaModel> _cboProvincia;
     private List<ComboBoxSignoZodModel> _cboSignoZod;
 
 
     int AnswerServer;
 
-    private void ValidarData()
+
+
+
+    private async Task LoadEditar(string Cedula)
     {
-        Console.Write(OPersona);
+
+        string query = "SELECT * FROM PERSONAS WHERE Cedula = @Cedula";
+
+        OPersona = await _data.LoadObject<Persona_Model, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
+
+
     }
 
     private async Task InsertData()
     {
-        string query = "Insert into PERSONAS (CEDULA,NOMBRE,APELLIDO,TELEFONO,FECHANACIMIENTO,PROVINCIAID,SIGNOZODID) values (@Cedula,@Nombre,@Apellido,@Telefono,@FechaNacimiento,@ProvinciaId,@SignoZodi)";
+        string query = "Insert into PERSONAS (CEDULA,NOMBRE,APELLIDO,TELEFONO,FECHANACIMIENTO,PROVINCIAID,SIGNOZODID) values (@Cedula,@Nombre,@Apellido,@Telefono,@FechaNacimiento,@ProvinciaId,@SignoZodid)";
 
-        AnswerServer = await _data.SaveData<Persona_Model>(query, OPersona, _config.GetConnectionString("default"));
+        AnswerServer = await _data.SaveData<dynamic>(query, OPersona, _config.GetConnectionString("default"));
+        OnInitialized();
     }
 
     private async Task UpdateData()
@@ -154,10 +163,17 @@ using Microsoft.Extensions.Configuration;
         await OnInitializedAsync();
     }
 
+    private async Task DeleteData(dynamic Persona)
+    {
+        string query = "Delete Personas Cedula= @Cedula";
+        AnswerServer = await _data.SaveData(query, new { Cedula = Persona.CEDULA }, _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+    }
+
     protected override async Task OnInitializedAsync()
     {
-        string query = "select * from PERSONAS";
-        personas = await _data.LoadData<Persona_Model, dynamic>(query, new { }, _config.GetConnectionString("default"));
+        string query = "SELECT * from vwPersonas";
+        personas = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
 
         query = "SELECT ID_Provincia, Nombre FROM PROVINCIAS";
 

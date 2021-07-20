@@ -8,7 +8,7 @@ namespace CRUDBLAZOR.Models.ComboBoxModels
     public class ComboBoxSignoZodModel
     {
 
-        public int ID_SignoZodiacal { get; set; }
+        public int ID_SIGNO_Zodiacal { get; set; }
 
         public string Nombre { get; set; }
     }

@@ -32,10 +32,10 @@ namespace CRUDBLAZOR.Models
         [Required(ErrorMessage = "El campo Fecha Nacimiento es obligatorio")]        
         public DateTime FechaNacimiento { get; set; }
 
-        [Required(ErrorMessage = "El campo Provincia es obligatorio")]
+        [Required(ErrorMessage = "El campo Provincia Nacimiento es obligatorio")]
         public int ProvinciaID { get; set; }
 
         [Required(ErrorMessage = "El campo Signo Zodiacal es obligatorio")]
-        public int SignoZodi { get; set; }
+        public int SignoZodid { get; set; }
     }
 }
