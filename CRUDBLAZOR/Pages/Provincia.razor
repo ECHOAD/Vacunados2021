@@ -1,0 +1,118 @@
+﻿@*@page "/provincia"
+@inject IDataAccess _data
+@inject IConfiguration _config
+
+
+<h3>Provincia</h3>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+            <EditForm Model="@OProvincia" OnValidSubmit="InsertData">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class="row">
+                    <div class="form-group col-sm-12 col-xl-6">
+                        <label for="nombre">Provincia</label>
+                        <InputText @bind-Value="@OProvincia.Nombre" class="form-control" />
+                        <small id="helpNombre" class="text-muted">Ex.. SANTO DOMINGO</small>
+                    </div>
+                    <div class="form-group  col-sm-12  col-xl-6">
+                        <label for="Id_Provincia">Id Provincia</label>
+                        <InputText @bind-Value="@OProvincia.IdProvincia" class="form-control" />
+                        <small id="helpIdProvincia" class="text-muted">Ex.. STO DGO </small>
+                    </div>
+                    <div clas="form-group col-12 col-xl-6">
+                        <button type="submit" class="btn btn-primary">Agregar Provincia</button>
+                        <button class="btn btn-primary" @onclick="UpdateData">Editar Provincia</button>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+@if (provincias == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Provincia</th>
+                            <th scope="col">IdProvincia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var p in provincias)
+                        {
+                        <tr>
+                            <td>@p.Nombre</td>
+                            <td>@p.Id_Provincia</td>
+                            <td>
+                                <button class="btn btn-primary" @onclick="() => LoadEditar(p.Id_Provincia)"><i class="bi-pencil-fill"></i></button>
+                                <button class="btn btn-danger" @onclick="() => DeleteData(p)"><i class="bi bi-x-octagon-fill"></i></button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+
+@code {
+
+    private ProvinciaModel OProvincia = new();
+
+    private static bool ModoEditar = false;
+
+    List<dynamic> provincias;
+
+    int AnswerServer;
+
+    private async Task LoadEditar(string Id_Provincia)
+    {
+        string query = "SELECT * FROM PROVINCIAS WHERE Id_Provincia = @IdProvincia";
+
+        OProvincia = await _data.LoadObject<ProvinciaModel, dynamic>
+            (query, new { IdProvincia = Id_Provincia }, _config.GetConnectionString("default"));
+    }
+
+    private async Task InsertData()
+    {
+        string query = "INSERT INTO PROVINCIAS (NOMBRE,ID_PROVINCIA) values (@Nombre, @IdProvincia)";
+        AnswerServer = await _data.SaveData<dynamic>(query, OProvincia, _config.GetConnectionString("default"));
+        OnInitialized();
+    }
+
+    private async Task UpdateData()
+    {
+        string query = "UPDATE PROVINCIAS SET NOMBRE=@Nombre WHERE ID_PROVINCIA=@IdProvincia";
+        AnswerServer = await _data.SaveData<ProvinciaModel>(query, OProvincia, _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+    }
+
+    private async Task DeleteData(dynamic Provincia)
+    {
+        string query = "DELETE PROVINCIAS WHERE Id_Provincia = @IdProvincia";
+        AnswerServer = await _data.SaveData(query, new { IdProvincia = Provincia.IdProvincia }, _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        string query = "SELECT Id_Provincia, Nombre FROM PROVINCIAS";
+        provincias = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
+    }
+}*@

@@ -1,9 +1,6 @@
 ﻿@page "/Persona"
-@using DataLibrary
-@using CRUDBLAZOR.Models;
 @using CRUDBLAZOR.Models.ComboBoxModels;
 
-@using Microsoft.Extensions.Configuration
 @inject IDataAccess _data
 @inject IConfiguration _config
 
@@ -40,12 +37,12 @@
                     </div>
                     <div class="form-group  col-sm-12  col-xl-6">
                         <label for="cedula">Fecha Nacimiento</label>
-                        <input class="form-control" type="date" @bind="@OPersona.FechaNacimiento" format-value="yyyy-MM-dd" />
+                        <input class="form-control" type="date" @bind="@OPersona.Fecha_nacimiento" format-value="yyyy-MM-dd" />
                     </div>
 
-                    <div class="form-group  col-sm-12  col-xl-6">
+                    @*<div class="form-group  col-sm-12  col-xl-6">
                         <label for="provinciaId">Provincia</label>
-                        <select class="form-control" @bind="OPersona.ProvinciaID">
+                        <select class="form-control" @bind="OPersona.ProvinciaI">
 
                             @if (_cboProvincia != null)
                             {
@@ -63,17 +60,17 @@
 
                             }
                         </select>
-                    </div>
+                    </div>*@
                     <div class="form-group col-12 col-xl-6">
                         <label for="cedula">Signo Zodiacal</label>
-                        <select @bind="@OPersona.SignoZodid" class="form-control">
+                        <select @bind="@OPersona.Signo_Id" class="form-control">
 
                             @if (_cboSignoZod != null)
                             {
                                 <option value="0">--SELECCIONE--</option>
                                 @foreach (var p in _cboSignoZod)
                                 {
-                                    <option value="@p.ID_SIGNO_Zodiacal">@p.Nombre</option>
+                                    <option value="@p.Id">@p.Nombre</option>
 
                                 }
                             }
@@ -93,12 +90,6 @@
                     </div>
 
                 </div>
-
-
-
-
-
-
             </EditForm>
 
 
@@ -128,8 +119,8 @@ else
                             <th scope="col">Nombres</th>
                             <th scope="col">Apellido</th>
                             <th scope="col">Telefono</th>
+                            <th scope="col">Fecha Nacimiento</th>
                             <th scope="col">Signo Zodiacal</th>
-                            <th scope="col">Provincia</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -137,19 +128,19 @@ else
 
                         @foreach (var p in personas)
                         {
-                            <tr>
-                                <td>@p.CEDULA</td>
-                                <td>@p.NOMBRE</td>
-                                <td>@p.APELLIDO</td>
-                                <td>@p.TELEFONO</td>
-                                <td>@p.SIGNOZODIACAL</td>
-                                <td>@p.PROVINCIA</td>
-                                <td>
-                                    <button class="btn btn-primary" @onclick="() => LoadEditar(p.CEDULA)"><i class="bi-pencil-fill"></i></button>
-                                    <button class="btn btn-danger" @onclick="() => DeleteData(p)"><i class="bi bi-x-octagon-fill"></i></button>
-                                </td>
+                        <tr>
+                            <td>@p.Cedula</td>
+                            <td>@p.Nombre</td>
+                            <td>@p.Apellido</td>
+                            <td>@p.Telefono</td>
+                            <td>@p.Fecha_nacimiento</td>
+                            <td>@p.Signo_Id</td>
+                            <td>
+                                <button class="btn btn-primary" @onclick="() => LoadEditar(p.Cedula)"><i class="bi-pencil-fill"></i></button>
+                                <button class="btn btn-danger" @onclick="() => DeleteData(p)"><i class="bi bi-x-octagon-fill"></i></button>
+                            </td>
 
-                            </tr>
+                        </tr>
                         }
                     </tbody>
                 </table>
@@ -157,20 +148,15 @@ else
 
         </div>
     </div>
-
-
-
-
 }
 
 
 
 @code {
 
-    private Persona_Model OPersona = new();
+    private PersonaModel OPersona = new();
 
     private static bool ModoEditar = false;
-
 
 
     List<dynamic> personas;
@@ -186,16 +172,16 @@ else
     private async Task LoadEditar(string Cedula)
     {
 
-        string query = "SELECT * FROM PERSONAS WHERE Cedula = @Cedula";
+        string query = "SELECT * FROM PERSONA WHERE Cedula = @Cedula";
 
-        OPersona = await _data.LoadObject<Persona_Model, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
+        OPersona = await _data.LoadObject<PersonaModel, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
 
 
     }
 
     private async Task InsertData()
     {
-        string query = "Insert into PERSONAS (CEDULA,NOMBRE,APELLIDO,TELEFONO,FECHANACIMIENTO,PROVINCIAID,SIGNOZODID) values (@Cedula,@Nombre,@Apellido,@Telefono,@FechaNacimiento,@ProvinciaId,@SignoZodid)";
+        string query = "SP_AGREGAR_PERSONA @Cedula, @Nombre, @Apellido, @Telefono, @Fecha_nacimiento, @Signo_Id";
 
         AnswerServer = await _data.SaveData<dynamic>(query, OPersona, _config.GetConnectionString("default"));
         OnInitialized();
@@ -204,32 +190,28 @@ else
     private async Task UpdateData()
     {
         string query = "Update Personas set Nombre=@Nombre,Apellido=@Apellido,Telefono=@Telefono,FechaNacimiento=@FechaNacimiento,ProvinciaId=@ProvinciaId,SIGNOZODID=@SignoZodid Where Cedula= @Cedula";
-        AnswerServer = await _data.SaveData<Persona_Model>(query, OPersona, _config.GetConnectionString("default"));
+        AnswerServer = await _data.SaveData<PersonaModel>(query, OPersona, _config.GetConnectionString("default"));
         await OnInitializedAsync();
     }
 
     private async Task DeleteData(dynamic Persona)
     {
-        string query = "Delete Personas Cedula= @Cedula";
-        AnswerServer = await _data.SaveData(query, new { Cedula = Persona.CEDULA }, _config.GetConnectionString("default"));
+        string query = "DELETE PERSONA Cedula= @Cedula";
+        AnswerServer = await _data.SaveData(query, new { Cedula = Persona.Cedula }, _config.GetConnectionString("default"));
         await OnInitializedAsync();
     }
 
     protected override async Task OnInitializedAsync()
     {
-        string query = "SELECT * from vwPersonas";
+        string query = "SELECT * FROM PERSONA";
         personas = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
 
-        query = "SELECT ID_Provincia, Nombre FROM PROVINCIAS";
+        //query = "SELECT ID_Provincia, Nombre FROM PROVINCIAS";
 
-        _cboProvincia = await _data.LoadData<ComboBoxProvinciaModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
+        //_cboProvincia = await _data.LoadData<ComboBoxProvinciaModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
 
-        query = "SELECT ID_SIGNO_Zodiacal, Nombre FROM SIGNO_ZODIACAL";
+        query = "SELECT Id, Nombre FROM SIGNO";
 
         _cboSignoZod = await _data.LoadData<ComboBoxSignoZodModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
     }
-
-
-
-
-    }
+}

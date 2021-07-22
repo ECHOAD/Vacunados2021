@@ -1,0 +1,97 @@
+﻿@page "/vacuna"
+
+@inject IDataAccess _data
+@inject IConfiguration _config
+
+<h3>Vaunas</h3>
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+            <EditForm Model="@OVacuna" OnValidSubmit="InsertData">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class="row">
+                    <div class="form-group col-sm-12 col-xl-6">
+                        <label for="marca">Marca</label>
+                        <InputText @bind-Value="@OVacuna.Marca" class="form-control" />
+                        <small id="helpMarca" class="text-muted">Ex.. Jhoson</small>
+                    </div>
+                    <div clas="form-group col-12 col-xl-6">
+                        <button type="submit" class="btn btn-primary">Registrar Vacuna</button>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+
+@if (vacunas == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var v in vacunas)
+                        {
+                            <tr>
+                                <td>@v.Marca</td>
+                                <td>
+                                    <button class="btn btn-danger" @onclick="() => DeleteData(v)"><i class="bi bi-x-octagon-fill"></i></button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+}
+
+
+
+@code {
+
+    private VacunaModel OVacuna = new();
+
+    List<dynamic> vacunas;
+    int AnswerServer;
+
+    private async Task InsertData()
+    {
+        string query = "SP_AGREGAR_VACUNA @Marca";
+
+        AnswerServer = await _data.SaveData<dynamic>(query, OVacuna, _config.GetConnectionString("default"));
+        OnInitialized();
+    }
+
+    private async Task DeleteData(dynamic Vacuna)
+    {
+        string query = "Delete from VACUNA WHERE Marca = @Marca and Dosis= @Dosis";
+        AnswerServer = await _data.SaveData(query, new { Marca = Vacuna.Marca, Dosis = Vacuna.Dosis}, _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        string query = "SELECT * FROM VACUNA";
+        vacunas = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
+    }
+}

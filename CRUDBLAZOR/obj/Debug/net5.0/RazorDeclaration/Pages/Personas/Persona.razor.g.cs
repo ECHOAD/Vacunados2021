@@ -13,105 +13,105 @@ namespace CRUDBLAZOR.Pages.Personas
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\_Imports.razor"
+#line 1 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\_Imports.razor"
+#line 2 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\_Imports.razor"
+#line 3 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\_Imports.razor"
+#line 4 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\_Imports.razor"
+#line 5 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\_Imports.razor"
+#line 6 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\_Imports.razor"
+#line 7 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\_Imports.razor"
+#line 8 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\_Imports.razor"
+#line 9 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using CRUDBLAZOR;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\_Imports.razor"
+#line 10 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using CRUDBLAZOR.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\Pages\Personas\People.razor"
+#line 11 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using DataLibrary;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\Pages\Personas\People.razor"
+#line 12 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using CRUDBLAZOR.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\Pages\Personas\People.razor"
-using CRUDBLAZOR.Models.ComboBoxModels;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 6 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\Pages\Personas\People.razor"
+#line 14 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\_Imports.razor"
 using Microsoft.Extensions.Configuration;
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\Pages\Personas\Persona.razor"
+using CRUDBLAZOR.Models.ComboBoxModels;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Persona")]
-    public partial class People : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class Persona : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -119,13 +119,12 @@ using Microsoft.Extensions.Configuration;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 168 "C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\Pages\Personas\People.razor"
+#line 155 "C:\Users\Alejandra\source\repos\Vacunados2021\CRUDBLAZOR\Pages\Personas\Persona.razor"
        
 
-    private Persona_Model OPersona = new();
+    private PersonaModel OPersona = new();
 
     private static bool ModoEditar = false;
-
 
 
     List<dynamic> personas;
@@ -141,16 +140,16 @@ using Microsoft.Extensions.Configuration;
     private async Task LoadEditar(string Cedula)
     {
 
-        string query = "SELECT * FROM PERSONAS WHERE Cedula = @Cedula";
+        string query = "SELECT * FROM PERSONA WHERE Cedula = @Cedula";
 
-        OPersona = await _data.LoadObject<Persona_Model, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
+        OPersona = await _data.LoadObject<PersonaModel, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
 
 
     }
 
     private async Task InsertData()
     {
-        string query = "Insert into PERSONAS (CEDULA,NOMBRE,APELLIDO,TELEFONO,FECHANACIMIENTO,PROVINCIAID,SIGNOZODID) values (@Cedula,@Nombre,@Apellido,@Telefono,@FechaNacimiento,@ProvinciaId,@SignoZodid)";
+        string query = "SP_AGREGAR_PERSONA @Cedula, @Nombre, @Apellido, @Telefono, @Fecha_nacimiento, @Signo_Id";
 
         AnswerServer = await _data.SaveData<dynamic>(query, OPersona, _config.GetConnectionString("default"));
         OnInitialized();
@@ -159,35 +158,30 @@ using Microsoft.Extensions.Configuration;
     private async Task UpdateData()
     {
         string query = "Update Personas set Nombre=@Nombre,Apellido=@Apellido,Telefono=@Telefono,FechaNacimiento=@FechaNacimiento,ProvinciaId=@ProvinciaId,SIGNOZODID=@SignoZodid Where Cedula= @Cedula";
-        AnswerServer = await _data.SaveData<Persona_Model>(query, OPersona, _config.GetConnectionString("default"));
+        AnswerServer = await _data.SaveData<PersonaModel>(query, OPersona, _config.GetConnectionString("default"));
         await OnInitializedAsync();
     }
 
     private async Task DeleteData(dynamic Persona)
     {
-        string query = "Delete Personas Cedula= @Cedula";
-        AnswerServer = await _data.SaveData(query, new { Cedula = Persona.CEDULA }, _config.GetConnectionString("default"));
+        string query = "DELETE PERSONA Cedula= @Cedula";
+        AnswerServer = await _data.SaveData(query, new { Cedula = Persona.Cedula }, _config.GetConnectionString("default"));
         await OnInitializedAsync();
     }
 
     protected override async Task OnInitializedAsync()
     {
-        string query = "SELECT * from vwPersonas";
+        string query = "SELECT * FROM PERSONA";
         personas = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
 
-        query = "SELECT ID_Provincia, Nombre FROM PROVINCIAS";
+        //query = "SELECT ID_Provincia, Nombre FROM PROVINCIAS";
 
-        _cboProvincia = await _data.LoadData<ComboBoxProvinciaModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
+        //_cboProvincia = await _data.LoadData<ComboBoxProvinciaModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
 
-        query = "SELECT ID_SIGNO_Zodiacal, Nombre FROM SIGNO_ZODIACAL";
+        query = "SELECT Id, Nombre FROM SIGNO";
 
         _cboSignoZod = await _data.LoadData<ComboBoxSignoZodModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
     }
-
-
-
-
-    
 
 #line default
 #line hidden
