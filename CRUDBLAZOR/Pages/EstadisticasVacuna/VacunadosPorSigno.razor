@@ -1,0 +1,51 @@
+﻿@page "/vacunadossigno"
+@inject IDataAccess _data
+@inject IConfiguration _config
+
+<h3>Vacunados Por Signo</h3>
+
+
+@if (VacunadosSignos == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Vacunados</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var p in VacunadosSignos)
+                        {
+                            <tr>
+                             
+                                <td>@p.Nombre</td>
+                                <td>@p.Cant_vacunados</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+
+    List<dynamic> VacunadosSignos;
+
+    protected override async Task OnInitializedAsync()
+    {
+        string query = "SELECT * FROM VW_LIST_VACUNADOS_BY_SIGNO";
+        VacunadosSignos = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
+    }
+}

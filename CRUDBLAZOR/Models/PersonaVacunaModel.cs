@@ -17,6 +17,8 @@ namespace CRUDBLAZOR.Models
         public int Provincia_Id { get; set; }
         [Required(ErrorMessage = "Este Campo es requerido")]
         public DateTime Fecha { get; set; }
+
+        public PersonaModel Persona { get; set; } = new PersonaModel();
     }
 }
 

@@ -1,0 +1,120 @@
+﻿@page "/anularegistros"
+@inject IDataAccess _data
+@inject IConfiguration _config
+
+
+<h3>Anular Registro Persona</h3>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <EditForm Model="CedulaFiltro" class="form-inline" OnValidSubmit="()=>LoadObjects(CedulaFiltro)">
+
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputPassword2" class="sr-only">Cedula</label>
+                    <input type="text" class="form-control" id="inputPassword2" @bind="CedulaFiltro" placeholder="Cedula">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Verificar</button>
+
+            </EditForm>
+        </div>
+@
+    </div>
+</div>
+
+
+@if (personavacunas == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Provincia</th>
+                            <th scope="col">Marca Vacuna</th>
+                            <th scope="col">Fecha Vacuna</th>
+                            <th scope="col">Signo Zodiacal</th>
+
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var p in personavacunas)
+                        {
+                            <tr>
+                                <td>@p.Cedula</td>
+                                <td>@p.Nombres</td>
+                                <td>@p.Telefono</td>
+                                <td>@p.Provincia</td>
+                                <td>@p.VacunaAplicada</td>
+                                <td>@p.Fecha</td>
+                                <td>@p.Signo</td>
+                                <td>
+                                    <button class="btn btn-danger" @onclick="() => DeleteData(p)"><i class="bi bi-x-octagon-fill"></i></button>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+}
+
+
+
+@code {
+    string CedulaFiltro = "";
+    private static bool ExistPersona = false;
+    static List<dynamic> personavacunas;
+
+    int AnswerServer;
+
+    private async Task LoadObjects(string Cedula)
+    {
+
+        string query = $"SELECT dbo.ufcExistePersona (@Cedula)";
+
+        int AnswerServer = await _data.LoadObject<int, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
+
+        ExistPersona = true;
+
+        if (AnswerServer == 1)
+        {
+            query = "SELECT * FROM uvwPersonaVacuna WHERE Cedula = @Cedula ";
+
+            personavacunas = await _data.LoadData<dynamic, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
+
+        }
+        else
+        {
+            //persona = new();
+            //OPersonaVacuna = new();
+
+            //OPersonaVacuna.Persona.Cedula = Cedula;
+            //ExistPersona = false;
+        }
+    }
+
+    private async Task DeleteData(dynamic Persona)
+    {
+        string query = "DELETE PERSONA_VACUNA WHERE Id= @Id";
+        AnswerServer = await _data.SaveData(query, new { Id = Persona.Id }, _config.GetConnectionString("default"));
+        personavacunas = null;
+    }
+
+}
+
+

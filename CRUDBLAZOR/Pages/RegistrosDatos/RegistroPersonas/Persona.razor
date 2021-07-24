@@ -1,0 +1,210 @@
+﻿@page "/Persona"
+
+@inject IDataAccess _data
+@inject IConfiguration _config
+
+<h3>Personas</h3>
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+            <EditForm Model="@OPersona" OnValidSubmit="InsertData">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class="row">
+                    <div class="form-group col-sm-12 col-xl-6">
+                        <label for="cedula">Cedula</label>
+                        <InputText @bind-Value="@OPersona.Cedula" class="form-control" />
+                        <small id="helpCedula" class="text-muted">Ex.. 000-000000-0</small>
+                    </div>
+                    <div class="form-group  col-sm-12  col-xl-6">
+                        <label for="cedula">Nombre</label>
+                        <InputText @bind-Value="@OPersona.Nombre" class="form-control" />
+                        <small id="helpNombre" class="text-muted">Ex.. Jhon</small>
+                    </div>
+                    <div class="form-group  col-sm-12  col-xl-6">
+                        <label for="cedula">Apellido</label>
+                        <InputText @bind-Value="@OPersona.Apellido" class="form-control" />
+                        <small id="helpId" class="text-muted">Ex.. Smith </small>
+                    </div>
+                    <div class="form-group   col-sm-12  col-xl-6">
+                        <label for="cedula">Telefono</label>
+                        <InputText @bind-Value="@OPersona.Telefono" class="form-control" />
+                        <small id="helpId" class="text-muted">Ex.. 809-648-8462 </small>
+                    </div>
+                    <div class="form-group  col-sm-12  col-xl-6">
+                        <label for="cedula">Fecha Nacimiento</label>
+                        <input class="form-control" type="date" @bind="@OPersona.Fecha_nacimiento" format-value="yyyy-MM-dd" />
+                    </div>
+
+                    @*<div class="form-group  col-sm-12  col-xl-6">
+                        <label for="provinciaId">Provincia</label>
+                        <select class="form-control" @bind="OPersona.ProvinciaI">
+
+                            @if (_cboProvincia != null)
+                            {
+                                <option value="0">--SELECCIONE--</option>
+                                @foreach (var p in _cboProvincia)
+                                {
+                                    <option value="@p.ID_Provincia">@p.Nombre</option>
+
+                                }
+                            }
+                            else
+                            {
+                                <option value="0">--No hay Data--</option>
+
+
+                            }
+                        </select>
+                    </div>*@
+                    <div class="form-group col-12 col-xl-6">
+                        <label for="cedula">Signo Zodiacal</label>
+                        <select @bind="@OPersona.Signo_Id" class="form-control">
+
+                            @if (_cboSignoZod != null)
+                            {
+                                <option value="0">--SELECCIONE--</option>
+                                @foreach (var p in _cboSignoZod)
+                                {
+                                    <option value="@p.Id">@p.Nombre</option>
+
+                                }
+                            }
+                            else
+                            {
+                                <option value="0">--No hay Data--</option>
+                            }
+
+                        </select>
+
+                    </div>
+                    <div clas="form-group col-12 col-xl-6">
+                        <button type="submit" class="btn btn-primary">Agregar Persona</button>
+                        <button class="btn btn-primary" @onclick="UpdateData">Modificar Persona</button>
+                    </div>
+
+                </div>
+            </EditForm>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+@if (personas == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombres</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Fecha Nacimiento</th>
+                            <th scope="col">Signo Zodiacal</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var p in personas)
+                        {
+                        <tr>
+                            <td>@p.Cedula</td>
+                            <td>@p.Nombre</td>
+                            <td>@p.Apellido</td>
+                            <td>@p.Telefono</td>
+                            <td>@p.Fecha_nacimiento</td>
+                            <td>@p.Signo_Id</td>
+                            <td>
+                                <button class="btn btn-primary" @onclick="() => LoadEditar(p.Cedula)"><i class="bi-pencil-fill"></i></button>
+                                <button class="btn btn-danger" @onclick="() => DeleteData(p)"><i class="bi bi-x-octagon-fill"></i></button>
+                            </td>
+
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+}
+
+
+
+@code {
+
+    private PersonaModel OPersona = new();
+
+    private static bool ModoEditar = false;
+
+
+    List<dynamic> personas;
+    private List<ComboBoxProvinciaModel> _cboProvincia;
+    private List<ComboBoxSignoZodModel> _cboSignoZod;
+
+    int AnswerServer;
+
+
+    private async Task LoadEditar(string Cedula)
+    {
+
+        string query = "SELECT * FROM PERSONA WHERE Cedula = @Cedula";
+
+        OPersona = await _data.LoadObject<PersonaModel, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
+
+    }
+
+    private async Task InsertData()
+    {
+        string query = "SP_AGREGAR_PERSONA @Cedula, @Nombre, @Apellido, @Telefono, @Fecha_nacimiento, @Signo_Id";
+
+        AnswerServer = await _data.SaveData<dynamic>(query, OPersona, _config.GetConnectionString("default"));
+        OnInitialized();
+    }
+
+    private async Task UpdateData()
+    {
+        string query = "Update Personas set Nombre=@Nombre,Apellido=@Apellido,Telefono=@Telefono,FechaNacimiento=@FechaNacimiento,ProvinciaId=@ProvinciaId,SIGNOZODID=@SignoZodid Where Cedula= @Cedula";
+        AnswerServer = await _data.SaveData<PersonaModel>(query, OPersona, _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+    }
+
+    private async Task DeleteData(dynamic Persona)
+    {
+        string query = "DELETE PERSONA Cedula= @Cedula";
+        AnswerServer = await _data.SaveData(query, new { Cedula = Persona.Cedula }, _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        string query = "SELECT * FROM PERSONA";
+        personas = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
+
+        //query = "SELECT ID_Provincia, Nombre FROM PROVINCIAS";
+
+        //_cboProvincia = await _data.LoadData<ComboBoxProvinciaModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
+
+        query = "SELECT Id, Nombre FROM SIGNO";
+
+        _cboSignoZod = await _data.LoadData<ComboBoxSignoZodModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
+    }
+}

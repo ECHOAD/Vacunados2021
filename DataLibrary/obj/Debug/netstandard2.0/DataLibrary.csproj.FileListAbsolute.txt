@@ -17,3 +17,13 @@ C:\Users\Alejandra\source\repos\Vacunados2021\DataLibrary\obj\Debug\netstandard2
 C:\Users\Alejandra\source\repos\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Alejandra\source\repos\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.dll
 C:\Users\Alejandra\source\repos\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.pdb
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.deps.json
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.dll
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.pdb
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csproj.AssemblyReference.cache
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.AssemblyInfoInputs.cache
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.AssemblyInfo.cs
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.dll
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.pdb

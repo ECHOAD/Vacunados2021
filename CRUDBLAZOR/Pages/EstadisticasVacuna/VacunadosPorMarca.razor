@@ -1,0 +1,52 @@
+﻿@page "/vacunadosmarca"
+@inject IDataAccess _data;
+@inject IConfiguration _config;
+
+<h3>Vacunados Por Marca</h3>
+
+
+@if (Vacunadosmarcas == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            
+                            <th scope="col">Marca</th>
+                            <th scope="col">Vacunados</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var p in Vacunadosmarcas)
+                        {
+                            <tr>
+                                
+                                <td>@p.Marca</td>
+                                <td>@p.Cant_vacunados</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+@code{
+
+    protected List<dynamic> Vacunadosmarcas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        string query = "SELECT * FROM VW_LIST_VACUNADOS_BY_VACUNA";
+        Vacunadosmarcas = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
+    }
+}
+

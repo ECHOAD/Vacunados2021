@@ -7,7 +7,7 @@ namespace CRUDBLAZOR.Models.ComboBoxModels
 {
     public class ComboBoxProvinciaModel
     {
-        public  int ID_Provincia { get; set; }
+        public  int Id { get; set; }
 
         public string Nombre { get; set; }
     }

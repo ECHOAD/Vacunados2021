@@ -1,0 +1,89 @@
+﻿@page "/vacunasprovincia"
+@inject IDataAccess _data
+@inject IConfiguration _config
+
+<h3>Vacunados Por Provincias</h3>
+
+
+<div class="form-group  col-sm-12  col-xl-6">
+    <label for="provinciaId">Provincia</label>
+    <select class="form-control" value="@OProvincia.Id":  @onchange="(ChangeEventArgs e)=> VacunadosProvincias(int.Parse(e.Value.ToString()))">
+
+        @if (_cboProvincia != null)
+        {
+            <option value="0">--SELECCIONE--</option>
+            @foreach (var p in _cboProvincia)
+            {
+                <option value="@p.Id">@p.Nombre</option>
+            }
+        }
+        else
+        {
+            <option value="0">--No hay Data--</option>
+        }
+    </select>
+</div>
+
+
+@if (VacunadosProv == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombres</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Fecha vacuna</th>
+                            <th scope="col">Vacuna</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var p in VacunadosProv)
+                        {
+                            <tr>
+                                <td>@p.Cedula</td>
+                                <td>@p.Nombre</td>
+                                <td>@p.Apellido</td>
+                                <td>@p.Telefono</td>
+                                <td>@p.Fecha</td>
+                                <td>@p.Marca</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private static ProvinciaModel OProvincia = new();
+
+    private List<ComboBoxProvinciaModel> _cboProvincia;
+    List<dynamic> VacunadosProv;
+
+
+    private async Task VacunadosProvincias(int Id)
+    {
+
+        string query = "SP_LIST_VACUNADOS_PROVINCIA @Id";
+
+        VacunadosProv = await _data.LoadData<dynamic, dynamic>(query, new { Id = Id }, _config.GetConnectionString("default"));
+    }
+    protected override async Task OnInitializedAsync()
+    {
+
+        string query = "SELECT Id, Nombre FROM PROVINCIA";
+
+        _cboProvincia = await _data.LoadData<ComboBoxProvinciaModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
+    }
+}

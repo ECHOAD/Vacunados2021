@@ -1,0 +1,115 @@
+﻿@page "/provincia"
+@inject IDataAccess _data
+@inject IConfiguration _config
+
+<h3>Provincia</h3>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+            <EditForm Model="@OProvincia" OnValidSubmit="InsertData">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class="row">
+                    <div class="form-group col-sm-12 col-xl-6">
+                        <label for="nombre">Provincia</label>
+                        <InputText @bind-Value="@OProvincia.Nombre" class="form-control" />
+                        <small id="helpNombre" class="text-muted">Ex.. SANTO DOMINGO</small>
+                    </div>
+                    <div clas="form-action col-12 col-xl-6">
+                        <button type="submit" class="btn btn-primary" disabled="@(ModoEditar == true? true:false)">Agregar</button>
+                        <button type="button" class="btn btn-primary" @onclick="UpdateData" disabled="@(ModoEditar != true? true:false)">Editar</button>
+
+                    </div>
+                </div>
+            </EditForm>
+
+        </div>
+    </div>
+</div>
+
+@if (provincias == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Provincia</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var p in provincias)
+                        {
+                            <tr>
+                                <td>@p.Nombre</td>
+                                <td>
+                                    <button class="btn btn-primary" @onclick="() => LoadEditar(p.Id)" disabled="@(ModoEditar == true? true:false)"><i class="bi-pencil-fill"></i></button>
+                                    <button class="btn btn-danger" @onclick="() => DeleteData(p)" disabled="@(ModoEditar == true? true:false)"><i class="bi bi-x-octagon-fill"></i></button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+
+@code {
+
+    private ProvinciaModel OProvincia = new();
+
+    private static bool ModoEditar = false;
+
+    List<dynamic> provincias;
+
+    int AnswerServer;
+
+    private async Task LoadEditar(int Id)
+    {
+        string query = "SELECT * FROM PROVINCIA WHERE Id = @Id";
+
+        OProvincia = await _data.LoadObject<ProvinciaModel, dynamic>(query, new { Id = Id }, _config.GetConnectionString("default"));
+
+        ModoEditar = true;
+    }
+
+    private async Task InsertData()
+    {
+        string query = "INSERT INTO Provincia (Nombre) Values(@Nombre)";
+        AnswerServer = await _data.SaveData<dynamic>(query, OProvincia, _config.GetConnectionString("default"));
+        OnInitialized();
+    }
+
+    private async Task UpdateData()
+    {
+        string query = $"UPDATE PROVINCIA SET Nombre = '{OProvincia.Nombre.ToString()}' Where Id = {Convert.ToInt32(OProvincia.Id)} ";
+        AnswerServer = await _data.SaveData<dynamic>(query, new { }, _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+
+        ModoEditar = false;
+    }
+
+    private async Task DeleteData(dynamic Provincia)
+    {
+        string query = "DELETE PROVINCIA WHERE Id = @Id";
+        AnswerServer = await _data.SaveData(query, new { Id = Provincia.Id }, _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        string query = "SELECT Id, Nombre FROM PROVINCIA";
+        provincias = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
+    }
+}
