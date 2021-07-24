@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CRUDBLAZOR.Models.ComboBoxModels
+﻿namespace CRUDBLAZOR.Models.ComboBoxModels
 {
     public class ComboBoxSignoZodModel
     {

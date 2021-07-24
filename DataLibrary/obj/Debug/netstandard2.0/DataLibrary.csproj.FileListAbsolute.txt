@@ -20,10 +20,27 @@ C:\Users\Alejandra\source\repos\Vacunados2021\DataLibrary\obj\Debug\netstandard2
 C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.deps.json
 C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.dll
 C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.pdb
-C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csproj.AssemblyReference.cache
-C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.AssemblyInfoInputs.cache
 C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.AssemblyInfo.cs
 C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.dll
 C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.pdb
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csproj.AssemblyReference.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.deps.json
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.pdb
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csprojAssemblyReference.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.AssemblyInfoInputs.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.AssemblyInfo.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.pdb
+C:\Users\Alejandra\source\repos\ProyectoVacunados\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.deps.json
+C:\Users\Alejandra\source\repos\ProyectoVacunados\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\DataLibrary\bin\Debug\netstandard2.0\DataLibrary.pdb
+C:\Users\Alejandra\source\repos\ProyectoVacunados\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csprojAssemblyReference.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.AssemblyInfoInputs.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.AssemblyInfo.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\DataLibrary\obj\Debug\netstandard2.0\DataLibrary.pdb

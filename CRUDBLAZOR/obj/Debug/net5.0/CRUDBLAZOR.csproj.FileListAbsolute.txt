@@ -217,3 +217,159 @@ C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\CRUDBLAZOR\obj\Debug\net
 C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\ref\CRUDBLAZOR.dll
 C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.pdb
 C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.genruntimeconfig.cache
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\RegistrosDatos\RegistroPersonas\PersonaVacuna.razor.g.cs
+C:\Users\Adrian Estevez\Desktop\Backend 1\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\RegistrosDatos\RegistroPersonas\PersonaVacuna.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\appsettings.json
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.StaticWebAssets.xml
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.exe
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.deps.json
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.runtimeconfig.json
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.runtimeconfig.dev.json
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\ref\CRUDBLAZOR.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.pdb
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.Views.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.Views.pdb
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\Dapper.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\System.Data.SqlClient.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\DataLibrary.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\bin\Debug\net5.0\DataLibrary.pdb
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.csprojAssemblyReference.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.AssemblyInfoInputs.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.AssemblyInfo.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.csproj.CoreCompileInputs.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorComponent.input.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\AnularRegistros.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\EstadisticasVacuna\VacunadosPorMarca.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\EstadisticasVacuna\VacunadosPorProvincia.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\EstadisticasVacuna\VacunadosPorSigno.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\RegistrosDatos\Provincia.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\RegistrosDatos\RegistroPersonas\Persona.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\RegistrosDatos\RegistroPersonas\PersonaVacuna.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\RegistrosDatos\Vacuna.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorComponent.output.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\CRUDBLAZOR.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.TagHelpers.input.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.TagHelpers.output.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorCoreGenerate.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\App.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\AnularRegistros.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\EstadisticasVacuna\VacunadosPorMarca.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\EstadisticasVacuna\VacunadosPorProvincia.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\EstadisticasVacuna\VacunadosPorSigno.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\RegistrosDatos\Provincia.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\RegistrosDatos\RegistroPersonas\Persona.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\RegistrosDatos\RegistroPersonas\PersonaVacuna.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\RegistrosDatos\Vacuna.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\_Host.cshtml.g.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorAssemblyInfo.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorAssemblyInfo.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\staticwebassets\CRUDBLAZOR.StaticWebAssets.Manifest.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\staticwebassets\CRUDBLAZOR.StaticWebAssets.xml
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\scopedcss\bundle\CRUDBLAZOR.styles.css
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\scopedcss\projectbundle\CRUDBLAZOR.bundle.scp.css
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorTargetAssemblyInfo.cache
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorTargetAssemblyInfo.cs
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.Views.pdb
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.csproj.CopyComplete
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\ref\CRUDBLAZOR.dll
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.pdb
+C:\Users\Alejandra\Downloads\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.genruntimeconfig.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\appsettings.json
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.StaticWebAssets.xml
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.exe
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.deps.json
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.runtimeconfig.json
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.runtimeconfig.dev.json
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\ref\CRUDBLAZOR.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.pdb
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.Views.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\CRUDBLAZOR.Views.pdb
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\Dapper.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\System.Data.SqlClient.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\DataLibrary.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\bin\Debug\net5.0\DataLibrary.pdb
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.csprojAssemblyReference.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.AssemblyInfoInputs.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.AssemblyInfo.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.csproj.CoreCompileInputs.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorComponent.input.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\ConfiguracionDatos\AnularRegistros.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\EstadisticasVacuna\VacunadosPorMarca.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\EstadisticasVacuna\VacunadosPorProvincia.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\EstadisticasVacuna\VacunadosPorSigno.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\RegistrosDatos\Provincia.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\RegistrosDatos\RegistroPersonas\Persona.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\RegistrosDatos\RegistroPersonas\PersonaVacuna.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Pages\RegistrosDatos\Vacuna.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorComponent.output.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\RazorDeclaration\CRUDBLAZOR.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.TagHelpers.input.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.TagHelpers.output.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorCoreGenerate.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\App.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\ConfiguracionDatos\AnularRegistros.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\EstadisticasVacuna\VacunadosPorMarca.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\EstadisticasVacuna\VacunadosPorProvincia.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\EstadisticasVacuna\VacunadosPorSigno.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\RegistrosDatos\Provincia.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\RegistrosDatos\RegistroPersonas\Persona.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\RegistrosDatos\RegistroPersonas\PersonaVacuna.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\RegistrosDatos\Vacuna.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\Razor\Pages\_Host.cshtml.g.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorAssemblyInfo.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorAssemblyInfo.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\staticwebassets\CRUDBLAZOR.StaticWebAssets.Manifest.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\staticwebassets\CRUDBLAZOR.StaticWebAssets.xml
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\scopedcss\bundle\CRUDBLAZOR.styles.css
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\scopedcss\projectbundle\CRUDBLAZOR.bundle.scp.css
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorTargetAssemblyInfo.cache
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.RazorTargetAssemblyInfo.cs
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.Views.pdb
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.csproj.CopyComplete
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\ref\CRUDBLAZOR.dll
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.pdb
+C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\obj\Debug\net5.0\CRUDBLAZOR.genruntimeconfig.cache

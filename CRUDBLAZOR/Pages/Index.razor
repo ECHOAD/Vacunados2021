@@ -1,7 +1,307 @@
 ﻿@page "/"
+@inject IDataAccess _data
+@inject IConfiguration _config
 
-<h1>Hello, world!</h1>
+<h3>Registros De Personas</h3>
 
-Welcome to your new app.
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <EditForm Model="CedulaFiltro" class="form-inline" OnValidSubmit="() => LoadObjects(CedulaFiltro)">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+                <div class="form-group col-12">
+                    <label for="inputPassword2" class="sr-only">Cedula</label>
+                    <input type="text" class="form-control" id="inputPassword2" @bind="CedulaFiltro" placeholder="Cedula">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Verificar</button>
+            </EditForm>
+        </div>
+
+        @if (OPersonaVacuna != null)
+        {
+            <div class="col-12">
+                <EditForm Model="@OPersonaVacuna.Persona" OnValidSubmit="InsertData">
+                    <DataAnnotationsValidator />
+                    <div class="row">
+                        <div class="form-group col-sm-12 col-xl-6">
+                            <label for="cedula">Cedula</label>
+                            <InputText @bind-Value="@OPersonaVacuna.Persona.Cedula" class="form-control" disabled="@ExistPersona" />
+                            <small id="helpCedula" class="text-muted">Ex.. 000-000000-0</small>
+                        </div>
+                        <div class="form-group  col-sm-12  col-xl-6">
+                            <label for="cedula">Nombre</label>
+                            <InputText @bind-Value="@OPersonaVacuna.Persona.Nombre" class="form-control" disabled="@ExistPersona" />
+                            <small id="helpNombre" class="text-muted">Ex.. Jhon</small>
+                        </div>
+                        <div class="form-group  col-sm-12  col-xl-6">
+                            <label for="cedula">Apellido</label>
+                            <InputText @bind-Value="@OPersonaVacuna.Persona.Apellido" class="form-control" disabled="@ExistPersona" />
+                            <small id="helpId" class="text-muted">Ex.. Smith </small>
+                        </div>
+                        <div class="form-group   col-sm-12  col-xl-6">
+                            <label for="cedula">Telefono</label>
+                            <InputText @bind-Value="@OPersonaVacuna.Persona.Telefono" class="form-control" disabled="@ExistPersona" />
+                            <small id="helpId" class="text-muted">Ex.. 809-648-8462 </small>
+                        </div>
+                        <div class="form-group  col-sm-12  col-xl-6">
+                            <label for="cedula">Fecha Nacimiento</label>
+                            <input class="form-control" type="date" @bind="@OPersonaVacuna.Persona.Fecha_nacimiento" format-value="dd-mm-yyyy" disabled="@ExistPersona" />
+                        </div>
+                        <div class="form-group col-12 col-xl-6">
+                            <label for="cedula">Signo Zodiacal</label>
+                            <select @bind="@OPersonaVacuna.Persona.Signo_Id" class="form-control" disabled="@ExistPersona">
+                                @if (_cboSignoZod != null)
+                                {
+                                    <option value="0">--SELECCIONE--</option>
+                                    @foreach (var p in _cboSignoZod)
+                                    {
+                                        <option value="@p.Id">@p.Nombre</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="0">--No hay Data--</option>
+                                }
+
+                            </select>
+                        </div>
+                        <div class="form-group  col-sm-12  col-xl-6">
+                            <label for="provinciaId">Vacuna</label>
+                            <select class="form-control" @bind="OPersonaVacuna.Vacuna_Id">
+
+                                @if (_cboProvincia != null)
+                                {
+                                    <option value="0">--SELECCIONE--</option>
+                                    @foreach (var p in _cboVacunas)
+                                    {
+                                        <option value="@p.Id">@p.Marca</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="0">--No hay Data--</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group  col-sm-12  col-xl-6">
+                            <label for="provinciaId">Provincia</label>
+                            <select class="form-control" @bind="OPersonaVacuna.Provincia_Id">
+
+                                @if (_cboProvincia != null)
+                                {
+                                    <option value="0">--SELECCIONE--</option>
+                                    @foreach (var p in _cboProvincia)
+                                    {
+                                        <option value="@p.Id">@p.Nombre</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="0">--No hay Data--</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group col-8 col-xl-4">
+                            <label for="cedula">Fecha de Vacuna</label>
+                            <input type="datetime-local" @bind="OPersonaVacuna.Fecha" class="form-control" disabled="@FechaActual">
+                        </div>
+                        <div class="form-group col-4 col-xl-2">
+                            <label for="FechaActual">La vacuna es aplicada hoy?</label>
+                            <input class="form-check" type="checkbox" checked @onchange=" eventArgs => { SetFechaActual(eventArgs.Value); }" />
+                        </div>
+
+                        <div clas="form-group col-12 col-xl-6">
+                            <button type="submit" class="btn btn-primary">Aplicar Vacuna</button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        }
+    </div>
+</div>
+
+
+@if (personavacunas == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Provincia</th>
+                            <th scope="col">Marca Vacuna</th>
+                            <th scope="col">Fecha Vacuna</th>
+                            <th scope="col">Signo Zodiacal</th>
+
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var p in personavacunas)
+                        {
+                            <tr>
+                                <td>@p.Cedula</td>
+                                <td>@p.Nombres</td>
+                                <td>@p.Telefono</td>
+                                <td>@p.Provincia</td>
+                                <td>@p.VacunaAplicada</td>
+                                <td>@p.Fecha</td>
+                                <td>@p.Signo</td>
+
+
+                                <td>
+                                    <button class="btn btn-danger" @onclick="() => DeleteData(p)"><i class="bi bi-x-octagon-fill"></i></button>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+}
+
+
+
+@code {
+
+    public string CedulaFiltro { get; set; } = "";
+
+    private static PersonaModel persona = new();
+    private PersonaVacunaModel OPersonaVacuna;
+    private static bool ExistPersona = false;
+    private static bool FechaActual = true;
+    List<dynamic> personavacunas;
+    private List<ComboBoxProvinciaModel> _cboProvincia;
+    private List<ComboBoxSignoZodModel> _cboSignoZod;
+    private List<dynamic> _cboVacunas;
+
+
+    int AnswerServer;
+
+    private void SetFechaActual(object Validacion)
+    {
+        FechaActual = (bool)Validacion;
+
+        OPersonaVacuna.Fecha = FechaActual == true ? DateTime.Now : null;
+    }
+
+    private async Task LoadObjects(string Cedula)
+    {
+
+        string query = $"SELECT dbo.ufcExistePersona (@Cedula)";
+
+        int AnswerServer = await _data.LoadObject<int, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
+
+        query = "SELECT * FROM VACUNA";
+        _cboVacunas = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
+
+        query = "SELECT Id, Nombre FROM PROVINCIA";
+
+        _cboProvincia = await _data.LoadData<ComboBoxProvinciaModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
+
+        query = "SELECT ID, Nombre FROM SIGNO";
+
+        _cboSignoZod = await _data.LoadData<ComboBoxSignoZodModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
+
+        ExistPersona = true;
+
+        if (AnswerServer == 1)
+        {
+            query = "SELECT  TOP 1 * FROM Persona WHERE Cedula = @Cedula ";
+
+            persona = await _data.LoadObject<PersonaModel, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
+            OPersonaVacuna = new(persona);
+        }
+        else
+        {
+
+            persona = new();
+            OPersonaVacuna = new(persona);
+            OPersonaVacuna.Persona.Cedula = Cedula;
+            ExistPersona = false;
+        }
+    }
+
+    private async Task InsertData()
+    {
+        string query;
+
+        if (!ExistPersona)
+        {
+
+            query = "SP_AGREGAR_PERSONA @Cedula, @Nombre, @Apellido, @Telefono, @Fecha_Nacimiento,@Signo_Id";
+            AnswerServer = await _data.SaveData<dynamic>(query, OPersonaVacuna.Persona,
+            _config.GetConnectionString("default"));
+
+            query = "SP_AGREGAR_PERSONAVACUNA @Cedula,  @Vacuna_Id , @Provincia_Id, @Fecha";
+            AnswerServer = await _data.SaveData<dynamic>(query, new
+            {
+                Cedula = OPersonaVacuna.Persona.Cedula,
+                Vacuna_Id = OPersonaVacuna.Vacuna_Id,
+                Provincia_Id = OPersonaVacuna.Provincia_Id,
+                Fecha = OPersonaVacuna.Fecha
+            },
+            _config.GetConnectionString("default"));
+
+        }
+        else
+        {
+            query = "SP_AGREGAR_PERSONAVACUNA @Cedula,  @Vacuna_Id , @Provincia_Id, @Fecha";
+
+            AnswerServer = await _data.SaveData<dynamic>(query, new
+            {
+                Cedula = OPersonaVacuna.Persona.Cedula,
+                Vacuna_Id = OPersonaVacuna.Vacuna_Id,
+                Provincia_Id = OPersonaVacuna.Provincia_Id,
+                Fecha = OPersonaVacuna.Fecha
+            },
+              _config.GetConnectionString("default"));
+        }
+
+        OPersonaVacuna = null;
+        await OnInitializedAsync();
+    }
+
+    private async Task UpdateData()
+    {
+        string query = "UPDATE PERSONAVACUNA SET Nombre=@Nombre,Apellido=@Apellido,Telefono=@Telefono," +
+        "FechaNacimiento=@FechaNacimiento,ProvinciaId=@ProvinciaId,SIGNOZODID=@SignoZodid, " +
+        "MarcaId=@MarcaId, DosisId=@DosisIdWhere Cedula= @Cedula";
+        AnswerServer = await _data.SaveData<PersonaVacunaModel>(query, OPersonaVacuna,
+            _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+    }
+
+    private async Task DeleteData(dynamic Persona)
+    {
+        string query = "DELETE PERSONAVACUNA Cedula= @Cedula";
+        AnswerServer = await _data.SaveData(query, new { Cedula = Persona.CEDULA },
+            _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        string query = "SELECT * from uvwPersonaVacuna";
+        personavacunas = await _data.LoadData<dynamic, dynamic>(query, new { },
+            _config.GetConnectionString("default"));
+    }
+}
+

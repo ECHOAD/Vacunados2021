@@ -1,0 +1,309 @@
+CREATE VACUNACION
+USE [VACUNACION]
+GO
+/****** Object:  UserDefinedFunction [dbo].[ufcExistePersona]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE FUNCTION [dbo].[ufcExistePersona]
+(
+@Cedula varchar(13)
+)
+RETURNS INT
+AS
+BEGIN 
+
+DECLARE @Respuesta INT
+
+    SET @Respuesta=0
+ 
+  IF EXISTS(Select Cedula From Persona Where Cedula = @Cedula)
+    SET @Respuesta= 1
+
+  RETURN @Respuesta
+
+END
+GO
+/****** Object:  UserDefinedFunction [dbo].[ufcExisteProvincia]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE FUNCTION [dbo].[ufcExisteProvincia]
+(
+@Nombre varchar(30)
+)
+RETURNS INT
+AS
+BEGIN 
+
+DECLARE @Respuesta INT
+
+    SET @Respuesta=0
+ 
+  IF EXISTS(Select Id From Provincia Where Nombre = @Nombre)
+    SET @Respuesta= 1
+
+  RETURN @Respuesta
+
+END
+GO
+/****** Object:  Table [dbo].[PERSONA_VACUNA]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PERSONA_VACUNA](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Persona_Id] [int] NOT NULL,
+	[Vacuna_Id] [int] NOT NULL,
+	[Provincia_Id] [int] NOT NULL,
+	[Fecha] [datetime] NULL,
+ CONSTRAINT [PK_PERSONA_VACUNA] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[VACUNA]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[VACUNA](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Marca] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_VACUNA] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_MARCA_VACUNO] UNIQUE NONCLUSTERED 
+(
+	[Marca] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  View [dbo].[VW_LIST_VACUNADOS_BY_VACUNA]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[VW_LIST_VACUNADOS_BY_VACUNA]
+
+AS
+    SELECT v.Id, v.Marca, COUNT(pv.id) as Cant_vacunados
+    FROM PERSONA_VACUNA pv
+    INNER JOIN VACUNA v ON v.Id = pv.Vacuna_Id
+    GROUP BY v.Id, v.Marca
+
+GO
+/****** Object:  Table [dbo].[PERSONA]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PERSONA](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Cedula] [varchar](11) NOT NULL,
+	[Nombre] [varchar](50) NOT NULL,
+	[Apellido] [varchar](50) NOT NULL,
+	[Telefono] [varchar](10) NULL,
+	[Fecha_nacimiento] [date] NOT NULL,
+	[Signo_Id] [int] NOT NULL,
+ CONSTRAINT [PK_PERSONA] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_CEDULA_PERSONA] UNIQUE NONCLUSTERED 
+(
+	[Cedula] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SIGNO]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SIGNO](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_SIGNO] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  View [dbo].[VW_LIST_VACUNADOS_BY_SIGNO]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[VW_LIST_VACUNADOS_BY_SIGNO]
+
+AS
+    SELECT s.Id, s.Nombre, COUNT(p.Id) as Cant_vacunados
+    FROM SIGNO s    
+    INNER JOIN PERSONA p ON p.Signo_Id = s.Id
+    INNER JOIN Persona_Vacuna pv ON pv.Persona_Id = p.id
+    GROUP BY s.Id, s.Nombre
+GO
+/****** Object:  Table [dbo].[PROVINCIA]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PROVINCIA](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_PROVINCIA] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_PROVINCIA] UNIQUE NONCLUSTERED 
+(
+	[Nombre] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  View [dbo].[uvwPersonaVacuna]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[uvwPersonaVacuna]
+AS
+SELECT pv.Id, p.Cedula, (p.Nombre +' '+p.Apellido) as Nombres ,p.Telefono,prv.Nombre Provincia,v.Marca as VacunaAplicada,pv.Fecha , sz.Nombre as Signo FROM PERSONA_VACUNA pv 
+INNER JOIN PERSONA p on p.Id= pv.Persona_Id
+INNER JOIN PROVINCIA prv on prv.ID= pv.Provincia_Id
+INNER JOIN VACUNA v on v.id= pv.vacuna_id
+INNER JOIN SIGNO sz on sz.Id= p.Signo_Id
+group by pv.Id,p.Cedula,p.Nombre,p.Apellido,p.Telefono,prv.Nombre,v.Marca,pv.Fecha,sz.Nombre
+GO
+ALTER TABLE [dbo].[PERSONA]  WITH CHECK ADD  CONSTRAINT [FK_PERSONA_PERSONA] FOREIGN KEY([Id])
+REFERENCES [dbo].[PERSONA] ([Id])
+GO
+ALTER TABLE [dbo].[PERSONA] CHECK CONSTRAINT [FK_PERSONA_PERSONA]
+GO
+ALTER TABLE [dbo].[PERSONA_VACUNA]  WITH CHECK ADD  CONSTRAINT [FK_PERSONA_VACUNA_PERSONA] FOREIGN KEY([Persona_Id])
+REFERENCES [dbo].[PERSONA] ([Id])
+GO
+ALTER TABLE [dbo].[PERSONA_VACUNA] CHECK CONSTRAINT [FK_PERSONA_VACUNA_PERSONA]
+GO
+ALTER TABLE [dbo].[PERSONA_VACUNA]  WITH CHECK ADD  CONSTRAINT [FK_PERSONA_VACUNA_PROVINCIA] FOREIGN KEY([Provincia_Id])
+REFERENCES [dbo].[PROVINCIA] ([Id])
+GO
+ALTER TABLE [dbo].[PERSONA_VACUNA] CHECK CONSTRAINT [FK_PERSONA_VACUNA_PROVINCIA]
+GO
+ALTER TABLE [dbo].[PERSONA_VACUNA]  WITH CHECK ADD  CONSTRAINT [FK_PERSONA_VACUNA_VACUNA] FOREIGN KEY([Vacuna_Id])
+REFERENCES [dbo].[VACUNA] ([Id])
+GO
+ALTER TABLE [dbo].[PERSONA_VACUNA] CHECK CONSTRAINT [FK_PERSONA_VACUNA_VACUNA]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_AGREGAR_PERSONA]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_AGREGAR_PERSONA]
+(
+	@Cedula		VARCHAR(11),
+	@Nombre		VARCHAR(50),
+	@Apellido		VARCHAR(50),
+	@Telefono		VARCHAR(10),
+	@Fecha_nacimiento	DATE,
+	@Signo_Id	INT
+)
+AS
+	INSERT INTO PERSONA(Cedula, Nombre, Apellido, Telefono, Fecha_nacimiento, Signo_Id) 
+	VALUES(@Cedula, @Nombre, @Apellido, @Telefono, @Fecha_nacimiento, @Signo_Id)
+GO
+/****** Object:  StoredProcedure [dbo].[SP_AGREGAR_PERSONAVACUNA]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_AGREGAR_PERSONAVACUNA]
+(
+    @Cedula    VARCHAR(11),
+    @Vacuna_Id    INT,
+    @Provincia_Id    INT,
+    @Fecha    NVARCHAR(20)
+)
+AS
+
+	DECLARE @IDPersona Int
+	SELECT @IDPersona = Id From PERSONA WHERE Cedula = @Cedula
+
+
+	BEGIN TRAN
+	BEGIN TRY
+    INSERT INTO PERSONA_VACUNA(persona_id, Vacuna_Id, Provincia_Id, Fecha) 
+    VALUES(@IDPersona, @Vacuna_Id, @Provincia_Id, @Fecha)
+	COMMIT
+	END TRY	
+	BEGIN CATCH
+	ROLLBACK
+	END CATCH
+	
+GO
+/****** Object:  StoredProcedure [dbo].[SP_AGREGAR_VACUNA]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_AGREGAR_VACUNA]
+(
+	@Marca			VARCHAR(50)
+)
+AS
+	INSERT INTO VACUNA(Marca) VALUES(@Marca)
+GO
+/****** Object:  StoredProcedure [dbo].[SP_LIST_VACUNADOS_PROVINCIA]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_LIST_VACUNADOS_PROVINCIA]
+(
+    @Provincia_Id INT
+)
+AS
+	SELECT  p.Cedula, p.Nombre, p.Apellido, p.Telefono, pv.Fecha, v.Marca  From Persona_Vacuna pv
+	INNER JOIN VACUNA v on pv.Vacuna_Id = v.Id
+    INNER JOIN Persona p ON pv.persona_id = p.id
+    WHERE pv.Provincia_Id = @Provincia_Id
+    GROUP BY p.Cedula,p.nombre,p.Apellido,p.Telefono,p.Telefono,pv.Fecha, pv.Vacuna_Id, v.Marca
+
+GO
+/****** Object:  StoredProcedure [dbo].[SP_SAVE_PROVINCIA]    Script Date: 7/24/2021 1:08:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_SAVE_PROVINCIA]
+(
+	@Id INT =null,
+    @Nombre VARCHAR(50)
+	
+)
+AS
+	IF dbo.ufcExisteProvincia (@Nombre)=0
+	BEGIN
+		INSERT INTO PROVINCIA(Nombre) VALUES(@Nombre)
+	END
+	ELSE
+	DECLARE @ID_PROVINCIA INT
+
+	SELECT @ID_PROVINCIA= Id FROM PROVINCIA WHERE Nombre=@Nombre
+
+		UPDATE  Provincia set Nombre = @Nombre WHERE id= @Id
+	
+	
+	
+GO
+USE [master]
+GO
+ALTER DATABASE [VACUNACION] SET  READ_WRITE 
+GO

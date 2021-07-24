@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CRUDBLAZOR.Models
 {
@@ -12,6 +8,6 @@ namespace CRUDBLAZOR.Models
         [StringLength(50, ErrorMessage = "Este campo no puede tener mas de 50 caracteres")]
         public string Marca { get; set; }
 
-      
+
     }
 }

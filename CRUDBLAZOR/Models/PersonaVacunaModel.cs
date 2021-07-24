@@ -1,24 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CRUDBLAZOR.Models
 {
     public class PersonaVacunaModel
     {
+
+        public PersonaVacunaModel(PersonaModel Opersona)
+        {
+            Persona = Opersona;
+
+            this.Fecha = DateTime.Now;
+        }
+
+
         public int Id { get; set; }
         [Required(ErrorMessage = "Este Campo es requerido")]
-        public int Persona_Id { get; set; }
+        public PersonaModel Persona { get; set; }
         [Required(ErrorMessage = "Este Campo es requerido")]
         public int Vacuna_Id { get; set; }
         [Required(ErrorMessage = "Este Campo es requerido")]
         public int Provincia_Id { get; set; }
         [Required(ErrorMessage = "Este Campo es requerido")]
-        public DateTime Fecha { get; set; }
-
-        public PersonaModel Persona { get; set; } = new PersonaModel();
+        public DateTime? Fecha { get; set; }
     }
 }
 

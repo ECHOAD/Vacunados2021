@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Adrian Estevez\\Desktop\\Backend 1\\Vacunados2021\\CRUDBLAZOR\\CRUDBLAZOR.csproj": {}
+    "C:\\Users\\Alejandra\\source\\repos\\ProyectoVacunados\\CRUDBLAZOR\\CRUDBLAZOR.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Adrian Estevez\\Desktop\\Backend 1\\Vacunados2021\\CRUDBLAZOR\\CRUDBLAZOR.csproj": {
+    "C:\\Users\\Alejandra\\source\\repos\\ProyectoVacunados\\CRUDBLAZOR\\CRUDBLAZOR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adrian Estevez\\Desktop\\Backend 1\\Vacunados2021\\CRUDBLAZOR\\CRUDBLAZOR.csproj",
+        "projectUniqueName": "C:\\Users\\Alejandra\\source\\repos\\ProyectoVacunados\\CRUDBLAZOR\\CRUDBLAZOR.csproj",
         "projectName": "CRUDBLAZOR",
-        "projectPath": "C:\\Users\\Adrian Estevez\\Desktop\\Backend 1\\Vacunados2021\\CRUDBLAZOR\\CRUDBLAZOR.csproj",
-        "packagesPath": "C:\\Users\\Adrian Estevez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adrian Estevez\\Desktop\\Backend 1\\Vacunados2021\\CRUDBLAZOR\\obj\\",
+        "projectPath": "C:\\Users\\Alejandra\\source\\repos\\ProyectoVacunados\\CRUDBLAZOR\\CRUDBLAZOR.csproj",
+        "packagesPath": "C:\\Users\\Alejandra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alejandra\\source\\repos\\ProyectoVacunados\\CRUDBLAZOR\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Adrian Estevez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alejandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Adrian Estevez\\Desktop\\Backend 1\\Vacunados2021\\DataLibrary\\DataLibrary.csproj": {
-                "projectPath": "C:\\Users\\Adrian Estevez\\Desktop\\Backend 1\\Vacunados2021\\DataLibrary\\DataLibrary.csproj"
+              "C:\\Users\\Alejandra\\source\\repos\\ProyectoVacunados\\DataLibrary\\DataLibrary.csproj": {
+                "projectPath": "C:\\Users\\Alejandra\\source\\repos\\ProyectoVacunados\\DataLibrary\\DataLibrary.csproj"
               }
             }
           }
@@ -61,21 +61,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.6.21355.2\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Adrian Estevez\\Desktop\\Backend 1\\Vacunados2021\\DataLibrary\\DataLibrary.csproj": {
+    "C:\\Users\\Alejandra\\source\\repos\\ProyectoVacunados\\DataLibrary\\DataLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adrian Estevez\\Desktop\\Backend 1\\Vacunados2021\\DataLibrary\\DataLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Alejandra\\source\\repos\\ProyectoVacunados\\DataLibrary\\DataLibrary.csproj",
         "projectName": "DataLibrary",
-        "projectPath": "C:\\Users\\Adrian Estevez\\Desktop\\Backend 1\\Vacunados2021\\DataLibrary\\DataLibrary.csproj",
-        "packagesPath": "C:\\Users\\Adrian Estevez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adrian Estevez\\Desktop\\Backend 1\\Vacunados2021\\DataLibrary\\obj\\",
+        "projectPath": "C:\\Users\\Alejandra\\source\\repos\\ProyectoVacunados\\DataLibrary\\DataLibrary.csproj",
+        "packagesPath": "C:\\Users\\Alejandra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alejandra\\source\\repos\\ProyectoVacunados\\DataLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Adrian Estevez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alejandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -126,7 +126,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.6.21355.2\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
