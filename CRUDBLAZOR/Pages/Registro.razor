@@ -1,0 +1,192 @@
+﻿@page "/registro"
+@inject IDataAccess _data
+@inject IConfiguration _config
+
+
+<section id="formulario">
+    <div class="container-fluid bg-transparent">
+     
+
+        <div class="col-md-6 col-sm-12" >
+            <EditForm Model="@OPersona" OnInvalidSubmit="InsertData">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div class="section-title">
+                    <h2>Registro de personas </h2>
+                    <small>Vacunate rd!</small>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div id="formulario-form" class="row ">
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="cedula">Cedula</label>
+                            <input @bind-value="@OPersona.Cedula" class="form-control " placeholder="000-000000-0" required="" />
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="Nombre">Nombre</label>
+                            <input @bind-value="@OPersona.Nombre" class="form-control" placeholder="Alfonso" required="" />
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="Apellido">Apellido</label>
+                            <input @bind-value="@OPersona.Apellido" class="form-control" placeholder="Soriano" required="" />
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="Telefono">Telefono</label>
+                            <input @bind-value="@OPersona.Telefono" class="form-control" placeholder="809-999-9200" required="" />
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="FechaNacimiento">Fecha de nacimiento</label>
+                            <input @bind-value="@OPersona.FechaNacimiento" class="form-control" placeholder="12/12/2000" required="" />
+                        </div>
+
+                        <div class="form-group  col-md-6 col-sm-12">
+                            <label for="provinciaId">Provincia</label>
+                            <select class="form-control" @bind="OPersona.ProvinciaID" required="">
+
+                                @if (_cboProvincia != null)
+                                {
+                                    <option value="0">--SELECCIONE--</option>
+                                    @foreach (var p in _cboProvincia)
+                                    {
+                                        <option value="@p.ID_Provincia">@p.Nombre</option>
+
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="0">--No hay Data--</option>
+
+
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="SignoZodid">Signo Zodiacal</label>
+                            <select @bind="@OPersona.SignoZodid" class="form-control" required="">
+
+                                @if (_cboSignoZod != null)
+                                {
+                                    <option value="0">--SELECCIONE--</option>
+                                    @foreach (var p in _cboSignoZod)
+                                    {
+                                        <option value="@p.ID_SIGNO_Zodiacal">@p.Nombre</option>
+
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="0">--No hay Data--</option>
+
+
+                                }
+
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-lg btn-outline-primary col-md-4 col-sm-12">Agregar Persona</button>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@code {
+
+    private Persona_Model OPersona = new();
+
+    private static bool ModoEditar = false;
+
+
+
+    List<dynamic> personas;
+    private List<ComboBoxProvinciaModel> _cboProvincia;
+    private List<ComboBoxSignoZodModel> _cboSignoZod;
+
+
+    int AnswerServer;
+
+
+
+
+    private async Task LoadEditar(string Cedula)
+    {
+
+        string query = "SELECT * FROM PERSONAS WHERE Cedula = @Cedula";
+
+        OPersona = await _data.LoadObject<Persona_Model, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
+
+
+    }
+
+    private async Task InsertData()
+    {
+        string query = "Insert into PERSONAS (CEDULA,NOMBRE,APELLIDO,TELEFONO,FECHANACIMIENTO,PROVINCIAID,SIGNOZODID) values (@Cedula,@Nombre,@Apellido,@Telefono,@FechaNacimiento,@ProvinciaId,@SignoZodid)";
+
+        AnswerServer = await _data.SaveData<dynamic>(query, OPersona, _config.GetConnectionString("default"));
+        OnInitialized();
+    }
+
+    private async Task UpdateData()
+    {
+        string query = "Update Personas set Nombre=@Nombre,Apellido=@Apellido,Telefono=@Telefono,FechaNacimiento=@FechaNacimiento,ProvinciaId=@ProvinciaId,SIGNOZODID=@SignoZodid Where Cedula= @Cedula";
+        AnswerServer = await _data.SaveData<Persona_Model>(query, OPersona, _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+    }
+
+    private async Task DeleteData(dynamic Persona)
+    {
+        string query = "Delete Personas Cedula= @Cedula";
+        AnswerServer = await _data.SaveData(query, new { Cedula = Persona.CEDULA }, _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        string query = "SELECT * from vwPersonas";
+        personas = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
+
+        query = "SELECT ID_Provincia, Nombre FROM PROVINCIAS";
+
+        _cboProvincia = await _data.LoadData<ComboBoxProvinciaModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
+
+        query = "SELECT ID_SIGNO_Zodiacal, Nombre FROM SIGNO_ZODIACAL";
+
+        _cboSignoZod = await _data.LoadData<ComboBoxSignoZodModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
+    }
+
+
+
+}

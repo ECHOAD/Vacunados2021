@@ -10,6 +10,7 @@
       "DataLibrary/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.90",
+          "MudBlazor": "5.0.15",
           "NETStandard.Library": "2.0.3",
           "System.Data.SqlClient": "4.8.2"
         },
@@ -43,6 +44,7 @@
           }
         }
       },
+      "MudBlazor/5.0.15": {},
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -200,6 +202,13 @@
       "sha512": "sha512-KSrRMb5vNi0CWSGG1++id2ZOs/1QhRqROt+qgbEAdQuGjGrFcl4AOl4/exGPUYz2wUnU42nvJqon1T3U0kPXLA==",
       "path": "microsoft.win32.registry/4.7.0",
       "hashPath": "microsoft.win32.registry.4.7.0.nupkg.sha512"
+    },
+    "MudBlazor/5.0.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KQi3FQTIxN14xrb/A1FcjuiqsrmR39nV/Ny7RtfT04rYwVgiZ8UH5AJripmLEUhrgRi/7A5Nm5KZSQK+A9tLXQ==",
+      "path": "mudblazor/5.0.15",
+      "hashPath": "mudblazor.5.0.15.nupkg.sha512"
     },
     "NETStandard.Library/2.0.3": {
       "type": "package",

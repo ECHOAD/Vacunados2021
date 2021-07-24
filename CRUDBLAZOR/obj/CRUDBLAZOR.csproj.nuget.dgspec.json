@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\CRUDBLAZOR\\CRUDBLAZOR.csproj": {}
+    "C:\\Users\\keury\\source\\repos\\Vacunados2021\\CRUDBLAZOR\\CRUDBLAZOR.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\CRUDBLAZOR\\CRUDBLAZOR.csproj": {
+    "C:\\Users\\keury\\source\\repos\\Vacunados2021\\CRUDBLAZOR\\CRUDBLAZOR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\CRUDBLAZOR\\CRUDBLAZOR.csproj",
+        "projectUniqueName": "C:\\Users\\keury\\source\\repos\\Vacunados2021\\CRUDBLAZOR\\CRUDBLAZOR.csproj",
         "projectName": "CRUDBLAZOR",
-        "projectPath": "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\CRUDBLAZOR\\CRUDBLAZOR.csproj",
-        "packagesPath": "C:\\Users\\Adrian Estevez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\CRUDBLAZOR\\obj\\",
+        "projectPath": "C:\\Users\\keury\\source\\repos\\Vacunados2021\\CRUDBLAZOR\\CRUDBLAZOR.csproj",
+        "packagesPath": "C:\\Users\\keury\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\keury\\source\\repos\\Vacunados2021\\CRUDBLAZOR\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Adrian Estevez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\keury\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\DataLibrary\\DataLibrary.csproj": {
-                "projectPath": "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\DataLibrary\\DataLibrary.csproj"
+              "C:\\Users\\keury\\source\\repos\\Vacunados2021\\DataLibrary\\DataLibrary.csproj": {
+                "projectPath": "C:\\Users\\keury\\source\\repos\\Vacunados2021\\DataLibrary\\DataLibrary.csproj"
               }
             }
           }
@@ -43,6 +47,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
+            "MudBlazor.ThemeManager": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -61,21 +75,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.6.21355.2\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\DataLibrary\\DataLibrary.csproj": {
+    "C:\\Users\\keury\\source\\repos\\Vacunados2021\\DataLibrary\\DataLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\DataLibrary\\DataLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\keury\\source\\repos\\Vacunados2021\\DataLibrary\\DataLibrary.csproj",
         "projectName": "DataLibrary",
-        "projectPath": "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\DataLibrary\\DataLibrary.csproj",
-        "packagesPath": "C:\\Users\\Adrian Estevez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\DataLibrary\\obj\\",
+        "projectPath": "C:\\Users\\keury\\source\\repos\\Vacunados2021\\DataLibrary\\DataLibrary.csproj",
+        "packagesPath": "C:\\Users\\keury\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\keury\\source\\repos\\Vacunados2021\\DataLibrary\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Adrian Estevez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\keury\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -105,6 +123,10 @@
               "target": "Package",
               "version": "[2.0.90, )"
             },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -126,7 +148,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.6.21355.2\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -48,6 +48,15 @@
           }
         }
       },
+      "MudBlazor/5.0.15": {
+        "type": "package",
+        "build": {
+          "buildTransitive/MudBlazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/MudBlazor.props": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -332,6 +341,27 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "MudBlazor/5.0.15": {
+      "sha512": "KQi3FQTIxN14xrb/A1FcjuiqsrmR39nV/Ny7RtfT04rYwVgiZ8UH5AJripmLEUhrgRi/7A5Nm5KZSQK+A9tLXQ==",
+      "type": "package",
+      "path": "mudblazor/5.0.15",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "Nuget.png",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/MudBlazor.props",
+        "buildMultiTargeting/MudBlazor.props",
+        "buildTransitive/MudBlazor.props",
+        "lib/net5.0/MudBlazor.dll",
+        "lib/net5.0/MudBlazor.xml",
+        "mudblazor.5.0.15.nupkg.sha512",
+        "mudblazor.nuspec",
+        "staticwebassets/MudBlazor.min.css",
+        "staticwebassets/MudBlazor.min.js"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -1019,24 +1049,30 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Dapper >= 2.0.90",
+      "MudBlazor >= 5.0.15",
       "NETStandard.Library >= 2.0.3",
       "System.Data.SqlClient >= 4.8.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Adrian Estevez\\.nuget\\packages\\": {}
+    "C:\\Users\\keury\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\DataLibrary\\DataLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\keury\\source\\repos\\Vacunados2021\\DataLibrary\\DataLibrary.csproj",
       "projectName": "DataLibrary",
-      "projectPath": "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\DataLibrary\\DataLibrary.csproj",
-      "packagesPath": "C:\\Users\\Adrian Estevez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Adrian Estevez\\source\\repos\\CRUDBLAZOR\\DataLibrary\\obj\\",
+      "projectPath": "C:\\Users\\keury\\source\\repos\\Vacunados2021\\DataLibrary\\DataLibrary.csproj",
+      "packagesPath": "C:\\Users\\keury\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\keury\\source\\repos\\Vacunados2021\\DataLibrary\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Adrian Estevez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\keury\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1066,6 +1102,10 @@
             "target": "Package",
             "version": "[2.0.90, )"
           },
+          "MudBlazor": {
+            "target": "Package",
+            "version": "[5.0.15, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
@@ -1087,7 +1127,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.6.21355.2\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

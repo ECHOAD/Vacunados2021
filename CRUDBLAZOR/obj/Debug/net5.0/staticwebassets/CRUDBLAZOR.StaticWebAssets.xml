@@ -1,3 +1,5 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="C:\Users\Adrian Estevez\source\repos\CRUDBLAZOR\CRUDBLAZOR\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/" Path="C:\Users\keury\source\repos\Vacunados2021\CRUDBLAZOR\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/MudBlazor" Path="C:\Users\keury\.nuget\packages\mudblazor\5.0.15\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/MudBlazor.ThemeManager" Path="C:\Users\keury\.nuget\packages\mudblazor.thememanager\1.0.3\build\..\staticwebassets\" />
 </StaticWebAssets>
