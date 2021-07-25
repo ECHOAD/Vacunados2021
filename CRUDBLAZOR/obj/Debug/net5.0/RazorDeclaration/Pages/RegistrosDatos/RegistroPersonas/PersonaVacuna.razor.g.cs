@@ -13,241 +13,111 @@ namespace CRUDBLAZOR.Pages.RegistrosDatos.RegistroPersonas
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 1 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 2 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 3 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 4 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 5 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 6 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 7 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 8 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 9 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using CRUDBLAZOR;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 10 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using CRUDBLAZOR.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 11 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using DataLibrary;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 12 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using CRUDBLAZOR.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 13 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using CRUDBLAZOR.Models.ComboBoxModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 15 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\_Imports.razor"
+#line 15 "C:\Users\Alejandra\source\repos\ProyectoVacunados\CRUDBLAZOR\_Imports.razor"
 using Microsoft.Extensions.Configuration;
 
 #line default
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/persona_vacuna")]
-    public partial class PersonaVacuna : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class PersonaVacuna : PersonaVacunaBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 205 "C:\Users\Alejandra\OneDrive\Desktop\Vacunados2021 RETITUYO UNA PREGUNTA\Vacunados2021EsteSi\CRUDBLAZOR\Pages\RegistrosDatos\RegistroPersonas\PersonaVacuna.razor"
-       
-
-    public string CedulaFiltro { get; set; } = "";
-
-    private static PersonaModel persona = new();
-    private PersonaVacunaModel OPersonaVacuna;
-    private static bool ExistPersona = false;
-    private static bool FechaActual = true;
-    List<dynamic> personavacunas;
-    private List<ComboBoxProvinciaModel> _cboProvincia;
-    private List<ComboBoxSignoZodModel> _cboSignoZod;
-    private List<dynamic> _cboVacunas;
-
-
-    int AnswerServer;
-
-    private void SetFechaActual(object Validacion)
-    {
-        FechaActual = (bool)Validacion;
-
-        OPersonaVacuna.Fecha = FechaActual == true ? DateTime.Now : null;
-    }
-
-    private async Task LoadObjects(string Cedula)
-    {
-
-        string query = $"SELECT dbo.ufcExistePersona (@Cedula)";
-
-        int AnswerServer = await _data.LoadObject<int, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
-
-        query = "SELECT * FROM VACUNA";
-        _cboVacunas = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
-
-        query = "SELECT Id, Nombre FROM PROVINCIA";
-
-        _cboProvincia = await _data.LoadData<ComboBoxProvinciaModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
-
-        query = "SELECT ID, Nombre FROM SIGNO";
-
-        _cboSignoZod = await _data.LoadData<ComboBoxSignoZodModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
-
-        ExistPersona = true;
-
-        if (AnswerServer == 1)
-        {
-            query = "SELECT  TOP 1 * FROM Persona WHERE Cedula = @Cedula ";
-
-            persona = await _data.LoadObject<PersonaModel, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
-
-
-            OPersonaVacuna = new(persona);
-
-
-        }
-        else
-        {
-
-            persona = new();
-            OPersonaVacuna = new(persona);
-
-            OPersonaVacuna.Persona.Cedula = Cedula;
-
-            ExistPersona = false;
-
-
-
-        }
-
-
-    }
-
-    private async Task InsertData()
-    {
-        string query;
-
-        if (!ExistPersona)
-        {
-
-            query = "SP_AGREGAR_PERSONA @Cedula, @Nombre, @Apellido, @Telefono, @Fecha_Nacimiento,@Signo_Id";
-            AnswerServer = await _data.SaveData<dynamic>(query, OPersonaVacuna.Persona, _config.GetConnectionString("default"));
-
-
-            query = "SP_AGREGAR_PERSONAVACUNA @Cedula,  @Vacuna_Id , @Provincia_Id, @Fecha";
-
-            AnswerServer = await _data.SaveData<dynamic>(query, new { Cedula = OPersonaVacuna.Persona.Cedula, Vacuna_Id = OPersonaVacuna.Vacuna_Id, Provincia_Id = OPersonaVacuna.Provincia_Id, Fecha = OPersonaVacuna.Fecha }, _config.GetConnectionString("default"));
-
-        }
-        else
-        {
-            query = "SP_AGREGAR_PERSONAVACUNA @Cedula,  @Vacuna_Id , @Provincia_Id, @Fecha";
-
-            AnswerServer = await _data.SaveData<dynamic>(query, new { Cedula = OPersonaVacuna.Persona.Cedula, Vacuna_Id = OPersonaVacuna.Vacuna_Id, Provincia_Id = OPersonaVacuna.Provincia_Id, Fecha = OPersonaVacuna.Fecha }, _config.GetConnectionString("default"));
-        }
-
-        OPersonaVacuna = null;
-        await OnInitializedAsync();
-
-    }
-
-    private async Task UpdateData()
-    {
-        string query = "UPDATE PERSONAVACUNA SET Nombre=@Nombre,Apellido=@Apellido,Telefono=@Telefono," +
-        "FechaNacimiento=@FechaNacimiento,ProvinciaId=@ProvinciaId,SIGNOZODID=@SignoZodid, " +
-        "MarcaId=@MarcaId, DosisId=@DosisIdWhere Cedula= @Cedula";
-        AnswerServer = await _data.SaveData<PersonaVacunaModel>(query, OPersonaVacuna, _config.GetConnectionString("default"));
-        await OnInitializedAsync();
-    }
-
-    private async Task DeleteData(dynamic Persona)
-    {
-        string query = "DELETE PERSONAVACUNA Cedula= @Cedula";
-        AnswerServer = await _data.SaveData(query, new { Cedula = Persona.CEDULA }, _config.GetConnectionString("default"));
-        await OnInitializedAsync();
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        string query = "SELECT * from uvwPersonaVacuna";
-        personavacunas = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
-
-
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration _config { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IDataAccess _data { get; set; }
     }
 }
 #pragma warning restore 1591

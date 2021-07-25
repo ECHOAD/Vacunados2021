@@ -1,9 +1,7 @@
 ﻿@page "/anularegistros"
-@inject IDataAccess _data
-@inject IConfiguration _config
+@inherits AnularRegistroBase
 
-
-<h3>Anular Registro Persona</h3>
+<h3>ANULAR REGISTROS DE PERSONAS VACUNADAS</h3>
 
 <div class="container-fluid">
     <div class="row">
@@ -21,7 +19,6 @@
 
     </div>
 </div>
-
 
 @if (personavacunas == null)
 {
@@ -73,48 +70,5 @@ else
     </div>
 }
 
-
-
-@code {
-    string CedulaFiltro = "";
-    private static bool ExistPersona = false;
-    static List<dynamic> personavacunas;
-
-    int AnswerServer;
-
-    private async Task LoadObjects(string Cedula)
-    {
-
-        string query = $"SELECT dbo.ufcExistePersona (@Cedula)";
-
-        int AnswerServer = await _data.LoadObject<int, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
-
-        ExistPersona = true;
-
-        if (AnswerServer == 1)
-        {
-            query = "SELECT * FROM uvwPersonaVacuna WHERE Cedula = @Cedula ";
-
-            personavacunas = await _data.LoadData<dynamic, dynamic>(query, new { Cedula = Cedula }, _config.GetConnectionString("default"));
-
-        }
-        else
-        {
-            //persona = new();
-            //OPersonaVacuna = new();
-
-            //OPersonaVacuna.Persona.Cedula = Cedula;
-            //ExistPersona = false;
-        }
-    }
-
-    private async Task DeleteData(dynamic Persona)
-    {
-        string query = "DELETE PERSONA_VACUNA WHERE Id= @Id";
-        AnswerServer = await _data.SaveData(query, new { Id = Persona.Id }, _config.GetConnectionString("default"));
-        personavacunas = null;
-    }
-
-}
 
 

@@ -1,9 +1,7 @@
 ﻿@page "/vacuna"
+@inherits VacunaBase
 
-@inject IDataAccess _data
-@inject IConfiguration _config
-
-<h3>Vacunas</h3>
+<h3>REGISTRO DE VACUNAS</h3>
 
 <div class="container-fluid">
 
@@ -64,30 +62,3 @@ else
 
 
 
-@code {
-
-    private VacunaModel OVacuna =new();
-
-    List<dynamic> vacunas;
-    int AnswerServer;
-
-    private async Task InsertData()
-    {
-        string query = "SP_AGREGAR_VACUNA @Marca";
-        AnswerServer = await _data.SaveData<dynamic>(query, OVacuna, _config.GetConnectionString("default"));
-        await OnInitializedAsync();
-    }
-
-    private async Task DeleteData(dynamic Vacuna)
-    {
-        string query = "DELETE FROM VACUNA WHERE Id = @Id";
-        AnswerServer = await _data.SaveData(query, new { Id = Vacuna.Id}, _config.GetConnectionString("default"));
-        await OnInitializedAsync();
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        string query = "SELECT * FROM VACUNA";
-        vacunas = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
-    }
-}

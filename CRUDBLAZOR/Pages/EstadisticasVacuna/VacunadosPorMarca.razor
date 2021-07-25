@@ -2,7 +2,7 @@
 @inject IDataAccess _data;
 @inject IConfiguration _config;
 
-<h3>Vacunados Por Marca</h3>
+<h3>VACUNADOS POR MARCA</h3>
 
 
 @if (Vacunadosmarcas == null)
@@ -46,7 +46,8 @@ else
     protected override async Task OnInitializedAsync()
     {
         string query = "SELECT * FROM VW_LIST_VACUNADOS_BY_VACUNA";
-        Vacunadosmarcas = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
+        Vacunadosmarcas = await _data.LoadData<dynamic, dynamic>(query, new { }, 
+            _config.GetConnectionString("default"));
     }
 }
 

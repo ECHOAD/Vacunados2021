@@ -1,8 +1,7 @@
 ﻿@page "/provincia"
-@inject IDataAccess _data
-@inject IConfiguration _config
+@inherits ProvinciaBase
 
-<h3>Provincia</h3>
+<h3>REGISTRO DE PROVINCIAS</h3>
 
 <div class="container-fluid">
 
@@ -62,54 +61,4 @@ else
             </div>
         </div>
     </div>
-}
-
-
-@code {
-
-    private ProvinciaModel OProvincia = new();
-
-    private static bool ModoEditar = false;
-
-    List<dynamic> provincias;
-
-    int AnswerServer;
-
-    private async Task LoadEditar(int Id)
-    {
-        string query = "SELECT * FROM PROVINCIA WHERE Id = @Id";
-
-        OProvincia = await _data.LoadObject<ProvinciaModel, dynamic>(query, new { Id = Id }, _config.GetConnectionString("default"));
-
-        ModoEditar = true;
-    }
-
-    private async Task InsertData()
-    {
-        string query = "INSERT INTO Provincia (Nombre) Values(@Nombre)";
-        AnswerServer = await _data.SaveData<dynamic>(query, OProvincia, _config.GetConnectionString("default"));
-        OnInitialized();
-    }
-
-    private async Task UpdateData()
-    {
-        string query = $"UPDATE PROVINCIA SET Nombre = '{OProvincia.Nombre.ToString()}' Where Id = {Convert.ToInt32(OProvincia.Id)} ";
-        AnswerServer = await _data.SaveData<dynamic>(query, new { }, _config.GetConnectionString("default"));
-        await OnInitializedAsync();
-
-        ModoEditar = false;
-    }
-
-    private async Task DeleteData(dynamic Provincia)
-    {
-        string query = "DELETE PROVINCIA WHERE Id = @Id";
-        AnswerServer = await _data.SaveData(query, new { Id = Provincia.Id }, _config.GetConnectionString("default"));
-        await OnInitializedAsync();
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        string query = "SELECT Id, Nombre FROM PROVINCIA";
-        provincias = await _data.LoadData<dynamic, dynamic>(query, new { }, _config.GetConnectionString("default"));
-    }
 }

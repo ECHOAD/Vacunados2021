@@ -1,8 +1,7 @@
 ﻿@page "/vacunasprovincia"
-@inject IDataAccess _data
-@inject IConfiguration _config
+@inherits VacunaProvinciaBase
 
-<h3>Vacunados Por Provincias</h3>
+<h3>VACUNADOS POR PROVINCIA</h3>
 
 
 <div class="form-group  col-sm-12  col-xl-6">
@@ -63,27 +62,4 @@ else
             </div>
         </div>
     </div>
-}
-
-@code {
-    private static ProvinciaModel OProvincia = new();
-
-    private List<ComboBoxProvinciaModel> _cboProvincia;
-    List<dynamic> VacunadosProv;
-
-
-    private async Task VacunadosProvincias(int Id)
-    {
-
-        string query = "SP_LIST_VACUNADOS_PROVINCIA @Id";
-
-        VacunadosProv = await _data.LoadData<dynamic, dynamic>(query, new { Id = Id }, _config.GetConnectionString("default"));
-    }
-    protected override async Task OnInitializedAsync()
-    {
-
-        string query = "SELECT Id, Nombre FROM PROVINCIA";
-
-        _cboProvincia = await _data.LoadData<ComboBoxProvinciaModel, dynamic>(query, new { }, _config.GetConnectionString("default"));
-    }
 }
